@@ -1,0 +1,11 @@
+[
+  {"capability":"code","source":"github johandesire14-hash/interface-innovation-hub","outcome":"migrate","status":"verified","next_action":"none - imported, preview renders / /login /documentation"},
+  {"capability":"schema","source":"external Supabase project (frbxlfqaovyrflqzpqsg) + Firestore collections","outcome":"migrate","status":"pending","next_action":"user decision: keep existing backend or move to Lovable Cloud; only private_messaging migration is in the repo"},
+  {"capability":"records","source":"external Supabase + Firestore","outcome":"migrate","status":"pending","next_action":"request CSV/JSON exports of app tables"},
+  {"capability":"auth identities","source":"Supabase Auth (email/password, Google)","outcome":"migrate","status":"pending","next_action":"request users export (email, original id)"},
+  {"capability":"authorization","source":"Supabase RLS/RPCs + firestore.rules","outcome":"migrate","status":"pending","next_action":"recreate policies after schema move"},
+  {"capability":"uploaded file bytes","source":"Supabase storage + Firebase storage","outcome":"migrate","status":"pending","next_action":"after schema move"},
+  {"capability":"payments (Mobile Money / KPay webhook)","source":"KPAY_WEBHOOK_SECRET, MANSA_* keys","outcome":"preserve","status":"pending","next_action":"secrets requested at verification"},
+  {"capability":"Telegram / Discord bots","source":"TELEGRAM_*, DISCORD_* vars","outcome":"preserve","status":"pending","next_action":"secrets requested at verification"},
+  {"capability":"verification","source":"vitest suite","outcome":"migrate","status":"pending","next_action":"26 of 129 tests already failing in the source repo"}
+]
