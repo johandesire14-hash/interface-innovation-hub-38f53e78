@@ -104,6 +104,9 @@ interface ConnectedAppsViewProps {
   onOpenFilesWorkflow?: (productIds: string[]) => void;
   initialTelegramChannels?: TelegramChannelItem[];
   initialDiscordServers?: DiscordServerItem[];
+  onSubViewChange?: (
+    subView: "catalog" | "telegram" | "telegram_wizard" | "discord" | "fan_purchases",
+  ) => void;
 }
 
 export const ConnectedAppsView: React.FC<ConnectedAppsViewProps> = ({
@@ -117,11 +120,17 @@ export const ConnectedAppsView: React.FC<ConnectedAppsViewProps> = ({
   onOpenFilesWorkflow,
   initialTelegramChannels,
   initialDiscordServers,
+  onSubViewChange,
 }) => {
   // Current view state: 'catalog' | 'telegram' | 'telegram_wizard' | 'discord' | 'fan_purchases'
   const [subView, setSubView] = useState<
     "catalog" | "telegram" | "telegram_wizard" | "discord" | "fan_purchases"
   >(initialSubView);
+
+  // Let the parent know which screen is open so it can hide its own duplicate back button.
+  useEffect(() => {
+    onSubViewChange?.(subView);
+  }, [subView, onSubViewChange]);
 
   // Search in Available Channels
   const [channelSearchQuery, setChannelSearchQuery] = useState("");

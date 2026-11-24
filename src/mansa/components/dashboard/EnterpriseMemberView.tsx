@@ -1933,6 +1933,10 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
   const [accessDeniedToast, setAccessDeniedToast] = useState<string | null>(null);
 
   const [isSupportConversationOpen, setIsSupportConversationOpen] = useState(false);
+  // Which screen the apps view is showing, so the mobile bar doesn't duplicate its back button.
+  const [connectedAppsSubView, setConnectedAppsSubView] = useState<
+    "catalog" | "telegram" | "telegram_wizard" | "discord" | "fan_purchases"
+  >("catalog");
   const [supportChatList, setSupportChatList] = useState<
     Array<{
       id: string;
@@ -3532,6 +3536,7 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
                     priceDisplay: offer.priceDisplay,
                     subscribersCount: offer.subscribersCount || 0,
                   }))}
+                  onSubViewChange={setConnectedAppsSubView}
                   onBackToDashboard={handleConnectedAppBack}
                 />
               ) : (
@@ -3602,19 +3607,23 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
           <div className="flex-1 flex flex-col h-full bg-[#0a0b0e] overflow-y-auto">
             {/* Top header on mobile for opening sidebar if on small screen */}
             <div className="lg:hidden w-full h-12 px-3 border-b border-white/[0.08] bg-[#0c0d11] flex items-center justify-between shrink-0 select-none">
-              <button
-                onClick={() => {
-                  setActiveTab("accueil");
-                  setCompanyTab("accueil");
-                  setIsMobileCompanyNavOpen(true);
-                  setIsMobileSidebarOpen(false);
-                }}
-                className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white cursor-pointer min-h-[38px] min-w-[38px] flex items-center justify-center"
-                title="Retour à la navigation de l’entreprise"
-                aria-label="Retour à la navigation de l’entreprise"
-              >
-                <ChevronLeft className="size-4" />
-              </button>
+              {connectedAppsSubView === "catalog" || connectedAppsSubView === "fan_purchases" ? (
+                <button
+                  onClick={() => {
+                    setActiveTab("accueil");
+                    setCompanyTab("accueil");
+                    setIsMobileCompanyNavOpen(true);
+                    setIsMobileSidebarOpen(false);
+                  }}
+                  className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white cursor-pointer min-h-[38px] min-w-[38px] flex items-center justify-center"
+                  title="Retour à la navigation de l’entreprise"
+                  aria-label="Retour à la navigation de l’entreprise"
+                >
+                  <ChevronLeft className="size-4" />
+                </button>
+              ) : (
+                <div className="min-w-[38px]" />
+              )}
               <div className="flex items-center gap-2">
                 <Plus className="size-4 text-blue-400" />
                 <span className="text-xs font-bold text-white">Applications</span>
@@ -3646,6 +3655,7 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
                     productIds.length > 0 ? productIds : selectedPreviewOfferId ? [selectedPreviewOfferId] : [],
                   );
                 }}
+                onSubViewChange={setConnectedAppsSubView}
                 onBackToDashboard={() => setActiveTab("accueil")}
               />
             </div>
@@ -3659,19 +3669,25 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
           <div className="flex-1 flex flex-col h-full bg-[#0a0b0e] overflow-y-auto">
             {/* Top header on mobile for opening sidebar if on small screen */}
             <div className="lg:hidden w-full h-12 px-3 border-b border-white/[0.08] bg-[#0c0d11] flex items-center justify-between shrink-0 select-none">
-              <button
-                onClick={() => {
-                  setActiveTab("accueil");
-                  setCompanyTab("accueil");
-                  setIsMobileCompanyNavOpen(true);
-                  setIsMobileSidebarOpen(false);
-                }}
-                className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white cursor-pointer min-h-[38px] min-w-[38px] flex items-center justify-center"
-                title="Retour à la navigation de l’entreprise"
-                aria-label="Retour à la navigation de l’entreprise"
-              >
-                <ChevronLeft className="size-4" />
-              </button>
+              {(connectedAppsSubView === "catalog" ||
+                connectedAppsSubView === "fan_purchases" ||
+                !canManageCompany) ? (
+                <button
+                  onClick={() => {
+                    setActiveTab("accueil");
+                    setCompanyTab("accueil");
+                    setIsMobileCompanyNavOpen(true);
+                    setIsMobileSidebarOpen(false);
+                  }}
+                  className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white cursor-pointer min-h-[38px] min-w-[38px] flex items-center justify-center"
+                  title="Retour à la navigation de l’entreprise"
+                  aria-label="Retour à la navigation de l’entreprise"
+                >
+                  <ChevronLeft className="size-4" />
+                </button>
+              ) : (
+                <div className="min-w-[38px]" />
+              )}
               <div className="flex items-center gap-2">
                 <DiscordIcon className="size-4" />
                 <span className="text-xs font-bold text-white">Discord</span>
@@ -3692,6 +3708,7 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
                     priceDisplay: offer.priceDisplay,
                     subscribersCount: offer.subscribersCount || 0,
                   }))}
+                  onSubViewChange={setConnectedAppsSubView}
                   onBackToDashboard={handleConnectedAppBack}
                 />
               ) : (
