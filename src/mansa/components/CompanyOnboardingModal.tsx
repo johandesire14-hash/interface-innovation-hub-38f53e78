@@ -252,7 +252,7 @@ export const CompanyOnboardingModal: React.FC<CompanyOnboardingModalProps> = ({
                     if (error) setError(null);
                   }}
                   placeholder={lang === "fr" ? "Ex: AfriTech Academy, Studio K, Mansa Digital..." : "e.g. AfriTech Academy"}
-                  className="w-full rounded-xl border border-white/10 bg-[#0c0d10] px-3.5 py-2.5 text-white placeholder-zinc-500 text-xs outline-none focus:border-[#3DDC84] focus:ring-1 focus:ring-[#3DDC84] transition-all font-medium"
+                  className="w-full rounded-xl border border-white/10 bg-[#0c0d10] px-3.5 py-2.5 text-white placeholder-zinc-500 text-xs outline-none focus:border-[#3DDC84] transition-all font-medium"
                   required
                   autoFocus
                 />
@@ -271,7 +271,7 @@ export const CompanyOnboardingModal: React.FC<CompanyOnboardingModalProps> = ({
                       ? "Ex: Accès VIP exclusif, formations vidéo business et ressources premium pour créateurs."
                       : "Brief description of your products and showcase..."
                   }
-                  className="w-full rounded-xl border border-white/10 bg-[#0c0d10] px-3.5 py-2.5 text-white placeholder-zinc-500 text-xs outline-none focus:border-[#3DDC84] focus:ring-1 focus:ring-[#3DDC84] transition-all resize-none leading-relaxed"
+                  className="w-full rounded-xl border border-white/10 bg-[#0c0d10] px-3.5 py-2.5 text-white placeholder-zinc-500 text-xs outline-none focus:border-[#3DDC84] transition-all resize-none leading-relaxed"
                 />
               </div>
 

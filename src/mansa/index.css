@@ -267,16 +267,6 @@
   text-underline-offset: 4px;
 }
 
-.ui-btn-primary:focus-visible,
-.ui-btn-secondary:focus-visible,
-.ui-btn-outline:focus-visible,
-.ui-btn-ghost:focus-visible,
-.ui-btn-danger:focus-visible,
-.ui-btn-link:focus-visible {
-  outline: 2px solid var(--ui-action-focus);
-  outline-offset: 2px;
-}
-
 .ui-btn-primary:disabled,
 .ui-btn-secondary:disabled,
 .ui-btn-outline:disabled,
@@ -923,15 +913,6 @@ html:not(.dark) .mansa-palette:not(:has(.afhub-home)) button[class*="bg-[#0055ff
   background-color: #00b85c !important;
   border-color: #008f46 !important;
   color: #000000 !important;
-}
-
-html:not(.dark) .mansa-palette:not(:has(.afhub-home)) .ui-btn-primary:focus-visible,
-html:not(.dark) .mansa-palette:not(:has(.afhub-home)) .ui-btn-secondary:focus-visible,
-html:not(.dark) .mansa-palette:not(:has(.afhub-home)) button[class*="bg-emerald-"]:focus-visible,
-html:not(.dark) .mansa-palette:not(:has(.afhub-home)) button[class*="bg-blue-"]:focus-visible,
-html:not(.dark) .mansa-palette:not(:has(.afhub-home)) button[class*="bg-purple-"]:focus-visible {
-  outline: 3px solid rgba(0, 166, 83, 0.32);
-  outline-offset: 2px;
 }
 
 /* Light mode heading rule: titles and subtitles are always pure black. */

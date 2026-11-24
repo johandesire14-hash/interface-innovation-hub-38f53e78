@@ -2824,7 +2824,7 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setIsBrandingModalOpen(true)}
-                      className="absolute inset-0 z-10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-400"
+                      className="absolute inset-0 z-10 cursor-pointer focus-visible:outline-none"
                       aria-label="Modifier la bannière de l’entreprise"
                     />
                   )}
@@ -3419,7 +3419,7 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
                             key={offer.id}
                             type="button"
                             onClick={() => setSelectedProductDetailOffer(offer)}
-                            className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111318] text-left transition-colors duration-150 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-emerald-400/60"
+                            className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111318] text-left transition-colors duration-150 hover:border-white/20 focus:outline-none"
                           >
                             <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-900">
                               {visual && (
@@ -3750,7 +3750,7 @@ export const EnterpriseMemberView: React.FC<EnterpriseMemberViewProps> = ({
             onClick={() => setIsPostComposerOpen(true)}
             aria-label="Créer une publication"
             title="Créer une publication"
-            className="absolute bottom-6 right-6 z-30 flex size-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl shadow-blue-950/50 transition-all hover:scale-105 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-[#08090b] cursor-pointer"
+            className="absolute bottom-6 right-6 z-30 flex size-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl shadow-blue-950/50 transition-all hover:scale-105 hover:bg-blue-500 focus:outline-none cursor-pointer"
           >
             <PenLine className="size-6" />
           </button>

@@ -61,7 +61,7 @@ export const MarketplaceSection: React.FC<MarketplaceSectionProps> = ({
               placeholder="Rechercher un produit, créateur..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full sm:w-72 rounded-xl border border-black/10 bg-white pl-9 pr-4 py-2.5 text-xs text-[#171717] placeholder-zinc-500 focus:border-[#00D26A] focus:ring-1 focus:ring-[#00D26A] outline-none transition-all"
+              className="w-full sm:w-72 rounded-xl border border-black/10 bg-white pl-9 pr-4 py-2.5 text-xs text-[#171717] placeholder-zinc-500 focus:border-[#00D26A] outline-none transition-all"
             />
           </div>
         </div>

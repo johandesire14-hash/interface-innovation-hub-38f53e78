@@ -37,7 +37,7 @@ export function CompanySocialIcons({ socialLinks }: { socialLinks?: CompanySocia
           rel="noopener noreferrer"
           aria-label={label}
           title={label}
-          className="inline-flex size-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-zinc-300 transition-colors hover:border-emerald-400/50 hover:bg-emerald-400/10 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+          className="inline-flex size-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-zinc-300 transition-colors hover:border-emerald-400/50 hover:bg-emerald-400/10 hover:text-emerald-300 focus-visible:outline-none"
         >
           <Icon className="size-3.5" aria-hidden="true" />
         </a>
