@@ -96,7 +96,7 @@ export const PaymentMethodsTemplate: React.FC<PaymentMethodsTemplateProps> = ({
               key={id}
               type="button"
               onClick={() => onPaymentCategoryChange(id)}
-              className={`border-b-2 px-1 pb-3 text-sm font-semibold transition-colors ${paymentCategory === id ? "border-[#3ddc84] text-white" : "border-transparent text-zinc-500 hover:text-zinc-200"}`}
+              className={`border-b-2 border-transparent px-1 pb-3 text-sm transition-colors ${paymentCategory === id ? "font-bold text-white" : "font-semibold text-zinc-500 hover:text-zinc-200"}`}
             >
               {label}
             </button>
