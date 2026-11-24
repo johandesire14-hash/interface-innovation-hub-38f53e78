@@ -26,7 +26,15 @@ interface AuthContextType {
   clearError: () => void;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+// Reuse one context instance across hot reloads: re-evaluating this module would otherwise
+// create a new context that the already-mounted AuthProvider does not provide.
+const AUTH_CONTEXT_KEY = "__mansaAuthContext__";
+const contextHost = globalThis as typeof globalThis & {
+  [AUTH_CONTEXT_KEY]?: React.Context<AuthContextType | undefined>;
+};
+const AuthContext =
+  contextHost[AUTH_CONTEXT_KEY] ??
+  (contextHost[AUTH_CONTEXT_KEY] = createContext<AuthContextType | undefined>(undefined));
 
 const AUTH_REQUEST_TIMEOUT_MS = 15_000;
 const AUTH_TIMEOUT_MESSAGE =
