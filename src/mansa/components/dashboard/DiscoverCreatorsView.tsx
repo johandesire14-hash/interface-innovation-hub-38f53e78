@@ -382,7 +382,6 @@ export const DiscoverCreatorsView: React.FC<DiscoverCreatorsViewProps> = ({
                   alt={enterprise.companyName}
                   className="size-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#12141c] via-transparent to-black/20" />
               </div>
 
               <div className="p-4 flex flex-1 flex-col gap-2">
